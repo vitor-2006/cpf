@@ -13,7 +13,7 @@ app.listen(port, () => {
 
 app.use(express.json())
 
-app.get('/valida-cpf/:cpf', (req: Request, res: Response) => {
+app.get('/valida-cpf/:cpf', (req: Request<{cpf:string}>, res: Response) => {
     if(validationBr.isCPF(req.params.cpf)) {
         return res.send('CPF válido')
     }else{
