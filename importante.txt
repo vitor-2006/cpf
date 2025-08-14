@@ -1,0 +1,32 @@
+### Iniciar um projeto
+npm init -y
+npm install typescript ts-node nodemon @types/node
+npx tsc --init
+Criar pasta src
+Criar arquivo src/server.ts
+
+npm install ts-node-dev
+no arquivo package.json "start:dev": "ts-node-dev --transpile-only --ignore-watch node_modules --respawn src/server.ts"
+
+npm install express @types/express
+
+Crie um novo projeto Node.js: `npm init -y`
+Instale as dependências essenciais: `npm install typescript ts-node nodemon @types/node`
+Instale o Express e os tipos para ele: `npm install express @types/express`
+Inicie as configurações de typescript: `npx tsc --init`
+Edite o arquivo `tsconfig.json` e configure-o para um projeto Node.js (outDir, rootDir).
+
+Crie um arquivo `src/server.ts`.
+
+Configure um servidor Express básico que escute na porta 3000.
+
+import express from 'express'
+
+const app = express();
+const port: number = 3000;
+
+app.use(express.json());
+	
+app.listen(port, () => {
+    console.log("Api iniciada na porta: " + port);
+});
